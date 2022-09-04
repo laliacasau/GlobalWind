@@ -1,0 +1,20 @@
+CREATE TABLE `glwBoats` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idEvents` int(10) unsigned NOT NULL,
+  `boatOwner` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `boatKey` char(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `boatUrl` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `boatSimName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `boatSimX` smallint(5) unsigned NOT NULL,
+  `boatSimY` smallint(5) unsigned NOT NULL,
+  `boatX` tinyint(3) unsigned NOT NULL,
+  `boatY` tinyint(3) unsigned NOT NULL,
+  `ownerName` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `windMode` tinyint(3) unsigned NOT NULL,
+  `ifModif` tinyint(3) unsigned NOT NULL,
+  `ifScan` tinyint(3) unsigned NOT NULL,
+  `createTime` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updTime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `info` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1852 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci	
