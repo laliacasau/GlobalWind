@@ -1,0 +1,21 @@
+#glw template
+wind dir=0                         #0-359
+wind speed=15                  #5-35
+wind gusts=0                     #0-100  
+wind shifts=0                     #0-180
+wind period=90                 #30-120 
+wave speed=3                  #3.0-15.0 
+wave height variance=0    #0-100     
+wave length variance=0    #0-100
+wave height=0                  #0.0-5.0
+wave length=50                 #10.0-100.0
+wave effects=2                  #0-nothing, 1-steer ,2-speed ,3-both
+current dir=0                     #0-359 
+current speed=0               #0.0-6.0
+water depth=0                   #0-Auto 1-20
+update pos=0                    #0-Disable 5,10,15,20,30,60
+event type=                      #not used
+sail mode=                        #0,1,2    is sail mode 
+name=                               #event name
+extra1=                              #extra1 data 
+extra2=                              #extra2 data

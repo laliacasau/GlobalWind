@@ -1,0 +1,17 @@
+# The format is key=value. #If the value is empty it takes the default value
+# '#' Is for comments
+menuoutregion=              #Sets whether the menu can be clicked outside the region  (1 Yes   0 No  Default: 0) for club windsetter
+interval=                         #interval blowing wind in seconds         default 3sec
+intervalmsg=90                   #interval say message in seconds        default 30sec         0-disables it
+directormsg=                  #Send messages boats to Director Event     0-Disabled     1-Enabled      Default 1
+period=                          #wind call emission period in seconds 0-Always   default 0
+saychannel=                    #channel for send message to all sailors event. 0-Disabled    Default 7     for Hud Windsetter
+
+#OWNERS  for club windsetter
+# Keys of the avatars that can set the default options and hard lock the line. Added which need.
+# The owner is automatically added to the list
+admin=
+admin=
+
+#SERVER URL
+server=http://...
