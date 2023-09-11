@@ -1,3 +1,6 @@
+* The glwXXX folder is used in scripts: GLW Receiver and ~ GLW Setter
+
+
 /
     glwdb.php
     public_html
