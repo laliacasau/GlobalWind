@@ -1,0 +1,41 @@
+* The glwXXX folder is used in scripts: GLW Receiver and ~ GLW Setter
+
+
+/
+    glwdb.php
+    public_html
+        glw122
+            glwAddBoat.php
+            glwAddBoatWorld.php
+            glwAddEvent.php
+            glwCleanTrash.php
+            glwEndBoat.php
+            glwEndEvent.php
+            glwFindEventKey.php
+            glwPollBoats.php
+            glwRecovery.php
+            glwReqEventKey.php
+            glwReqMap.php
+            glwReqMapUsb.php
+            glwReqMapVars.php
+            glwReqSimData.php
+            glwReqSimDataWorld.php
+            glwRUpdEvent.php
+            glwSayEvent.php
+            glwScanEvent.php
+            glwSignEvent.php
+            glwUpdEvent.php
+            glwUpdEventUrl.php
+            glwUpdPos.php
+            glwUpdWorld.php
+            glwWSRecovery.php
+            images
+                glw_symbols.png
+        glw120
+            ......
+            images
+                glw_symbols.png
+        glw110
+            ......
+            images
+                glw_symbols.png
