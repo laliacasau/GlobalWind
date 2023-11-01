@@ -1,14 +1,20 @@
-// GLW Global Wind v1.2 Last change 13Jan23
+// GLW Global Wind v1.2
 // Created by Lalia (LaliaCasau Resident) 2022
 // Based on WWC By Mothgirl Dibou Last change 2008
 // Based on BWind By Becca Mouillez
-// GLW Receiver 1.21B1
+//
+//Receive the TWA wind from the server, for the current SIM and calculate the wind with the variations, the currents, 
+//      the waves and the windshadow and transmits the parameters to the engine script with the key "glw"
 //
 //VARIABLE NAMING
 //I am using the Azn Min (itoibo) system with some variation, which uses two letters to describe the scope and data type of each variable.
 //The first letter is the scope: g-global l-local c-constant p-parameter
 //The second letter is the data type: i-integer f-float s-string k-key v-vector r-rotation a-array(list)  
 //
+//GLW Receiver 1.25  14/Oct/2023
+//Fix an error when taking the worldwind wind
+//
+//GLW Receiver 1.24  27/Sep/2023
 //version 1.24 change server folder to glw122
 //
 //CONSTANTS ===========>
@@ -422,8 +428,8 @@ fFunctions(integer pType)
         integer liNewIndex=(integer)llGetSubString(gsDataSim,giSimActualIndex,giSimActualIndex);  //list number for giSimActualIndex
         if(liNewIndex==0){  //base wind
             giVarsType=giVars1=giVars2=giVars3=giVars4=giVarsOverlap=0;    
-            //llOwnerSay("changed "+(string)giDataSimActual+"     "+gsDataSim0);
-            if(giDataSimActual!=0) saveGlwData(3,gsDataSim0);   //if the current wind is not the base wind, load the base wind
+            //llOwnerSay("R424 changed "+(string)giDataSimActual+"     "+gsDataSim0);
+            if(giDataSimActual!=0 || giWindMode==3) saveGlwData(3,gsDataSim0);   //if the current wind is not the base wind, load the base wind
             giDataSimActual=0;
             gsDataSimActual="";
         }else{  //variations wind
@@ -815,12 +821,13 @@ default
                 //llOwnerSay(psBody);
             }
         }else if(pkId==gkHttpSrvAddBoatWorld){    //receive data to boat world wind
-            //llOwnerSay("receiver world add boat data: "+psBody);
+            //llOwnerSay("R817 receiver world add boat data: "+psBody);
             if(llGetSubString(psBody,0,1)=="OK"){
                 loadDataEvent(0,psBody);   //intial World wind from server
+                //llOwnerSay("R820 wind data "+(string)giWindMode+"   "+(string)giGlwWndDir+"   "+(string)giGlwWndSpeed);
                 giStatus=4;
                 llMessageLinked(LINK_THIS, MSGTYPE_RETURN, "glw", (string)giWindMode+","+(string)giGlwWndDir+","+(string)giGlwWndSpeed); //MSGTYPE_RETURN
-                //llOwnerSay("Boat World Wind registered");
+                //llOwnerSay("R822 wind data "+(string)giWindMode+"   "+(string)giGlwWndDir+"   "+(string)giGlwWndSpeed);
                 llRegionSayTo(gkHelm,0,"Boat World Wind registered");     //<============== version 1.22
             }else{
                 //llOwnerSay("Error register Boat");
